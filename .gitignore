@@ -1,0 +1,7 @@
+chrome-win64
+chromedriver-win64
+combined_data/january_data/*
+combined_data/monthly_data/*
+combined_data/quarterly_data/*
+raw_xlsx/*
+macro_data.xlsx

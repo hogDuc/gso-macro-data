@@ -1,0 +1,375 @@
+{
+    "quarterly":{},
+    "january":{
+        "0":{
+            "sheet":"Agricultural",
+            "columns":{
+                "2":"thousand_ha_yoy",
+                "3":"thousand_ha_current",
+                "4":"pct_yoy"
+            }
+        },
+        "1":{
+            "sheet":"IIP",
+            "columns":{
+                "0":"industry",
+                "1":"pct_mom",
+                "2":"pct_yoy"
+            }
+        },
+        "2":{
+            "sheet":"Industrial product",
+            "columns":{
+                "0":"product",
+                "1":"unit",
+                "2":"performance_lag1",
+                "3":"est_performance",
+                "4":"pct_mom",
+                "5":"pct_yoy"
+            }
+        },
+        "3":{
+            "sheet":"LEI",
+            "columns":{
+                "0":"industry",
+                "1":"ind_lei_mom",
+                "2":"ind_lei_yoy"
+            }
+        },
+        "4":{
+            "sheet":"LEI province",
+            "columns":{
+                "0":"province",
+                "1":"prov_lei_mom",
+                "2":"prov_lei_yoy"
+            }
+        },
+        "5":{
+            "sheet":"Enterprise Indicators",
+            "columns":{
+                "0":"indicator",
+                "1":"value_mom",
+                "2":"value_yoy",
+                "3":"value_curr",
+                "4":"pct_mom",
+                "5":"pct_yoy"
+            }
+        },
+        "6":{
+            "sheet":"Newly regis Enter",
+            "columns":{
+                "1": "industry",
+                "2": "n_new_enterprise",
+                "3": "n_capital_bil",
+                "4": "n_employee",
+                "6": "pct_new_yoy",
+                "7": "pct_cap_yoy",
+                "8": "pct_emp_yoy"
+            }
+        },
+        "7":{
+            "sheet":"Enterprise returned",
+            "columns":{
+                "0": "industry",
+                "1": "return_ent_yoy",
+                "2": "return_ent",
+                "3": "return_ent_pct_yoy"
+            }
+        },
+        "8":{
+            "sheet":"Temporarily ceased firms",
+            "columns":{
+                "0": "industry",
+                "1": "ceased_ent_yoy",
+                "2": "ceased_ent",
+                "3": "ceased_ent_pct_yoy"
+            }
+        },
+        "9":{
+            "sheet":"Completed dissolution firms",
+            "columns":{
+                "0": "industry",
+                "1": "diss_ent_yoy",
+                "2": "diss_ent",
+                "3": "diss_ent_pct_yoy"
+            }
+        },
+        "10":{
+            "sheet":"Investment Capital Under States",
+            "columns":{
+                "2":"plan_bil_vnd",
+                "3":"est_bil_vnd",
+                "4":"plan_yoy_pct",
+                "5":"est_bil_vnd_yoy"
+            }
+        },
+        "11":{
+            "sheet":"FDI",
+            "columns":{
+                "2": "n_projects",
+                "3": "new_registered_cap_mil_usd",
+                "4": "reg_cap_adjust_mil_usd"
+            }
+        },
+        "13":{
+            "sheet":"Retail Sales",
+            "columns":{
+                "0":"goods_service",
+                "1":"perf_bil_vnd_lag1",
+                "2":"est_perf_bil_vnd",
+                "3":"est_structure",
+                "4":"structure_pct",
+                "5":"pct_yoy"
+            }
+        },
+        "14":{
+            "sheet":"Export",
+            "columns":{
+                "2":"last_yr_vol_1000_ton",
+                "3":"last_yr_mil_usd",
+                "5":"est_vol_1000_ton",
+                "6":"est_val_mil_usd",
+                "8":"yoy_vol_1000_ton",
+                "9":"yoy_val_mil_usd"
+            }
+        },
+        "15":{
+            "sheet":"Import",
+            "columns":{
+                "2":"last_yr_vol_1000_ton",
+                "3":"last_yr_mil_usd",
+                "5":"est_vol_1000_ton",
+                "6":"est_val_mil_usd",
+                "8":"yoy_vol_1000_ton",
+                "9":"yoy_val_mil_usd"
+            }
+        },
+        "16":{
+            "sheet":"CPI",
+            "columns":{
+                "3":"cpi_base",
+                "4":"cpi_yoy",
+                "5":"cpi_mom"
+            }
+        },
+        "17":{
+            "sheet":"Carriage of passengers",
+            "columns":{
+                "2":"estimate",
+                "3":"pct_mom",
+                "4":"pct_yoy"
+            }
+        },
+        "18":{
+            "sheet":"Carriage of cargos",
+            "columns":{
+                "2":"estimate",
+                "3":"pct_mom",
+                "4":"pct_yoy"
+            }
+        },
+        "19":{
+            "sheet":"International visitors",
+            "columns":{
+                "2":"est_arrivals",
+                "3":"pct_mom",
+                "4":"pct_yoy"
+            }
+        }
+    },
+    "monthly":{
+        "0":{
+            "sheet":"Agricultural",
+            "columns":{
+                "2":"thousand_ha_yoy",
+                "3":"thousand_ha_current",
+                "4":"pct_yoy"
+            }
+        },
+        "1":{
+            "sheet":"IIP",
+            "columns":{
+                "0":"industry",
+                "1":"pct_yoy_lag1",
+                "2":"pct_mom",
+                "3":"pct_yoy",
+                "4":"accum_yoy"
+            }
+        },
+        "2":{
+            "sheet":"Industrial product",
+            "columns":{
+                "0":"product",
+                "1":"unit",
+                "2":"performance_lag1",
+                "3":"est_performance",
+                "4":"accum_performance",
+                "5":"pct_yoy",
+                "6":"pct_accum_yoy"
+            }
+        },
+        "3":{
+            "sheet":"LEI",    
+            "columns":{
+                "0":"industry",
+                "1":"ind_lei_mom",
+                "2":"ind_lei_yoy"
+            }
+        },
+        "4":{
+            "sheet":"LEI province",
+            "columns":{
+                "0":"province",
+                "1":"prov_lei_mom",
+                "2":"prov_lei_yoy"
+            }
+        },
+        "5":{
+            "sheet":"Enterprise Indicators",
+            "columns":{    
+                "0": "indicator",
+                "1": "value_lag1",
+                "2": "value",
+                "3": "accum_value",
+                "4": "value_mom",
+                "5": "value_yoy",
+                "6": "accum_yoy"
+            }
+        },
+        "6":{
+            "sheet":"Newly regis Enter",
+            "columns":{
+                "1": "industry",
+                "2": "accum_new_enterprise",
+                "3": "accum_capital_bil",
+                "4": "accum_employee",
+                "5": "accum_new_yoy",
+                "6": "accum_cap_yoy",
+                "7": "accum_emp_yoy"
+            }
+        },
+        "7":{
+            "sheet":"Enterprise returned",
+            "columns":{
+                "0": "industry",
+                "1": "accum_return_ent_yoy",
+                "2": "accum_return_ent",
+                "3": "return_ent_pct_yoy"
+            }
+        },
+        "8":{
+            "sheet":"Temporarily ceased firms",
+            "columns":{
+                "0": "industry",
+                "1": "accum_ceased_ent_yoy",
+                "2": "accum_ceased_ent",
+                "3": "ceased_ent_pct_yoy"
+            }
+        },
+        "9":{
+            "sheet":"Completed dissolution firms",
+            "columns":{
+                "0": "industry",
+                "1": "accum_diss_ent_yoy",
+                "2": "accum_diss_ent",
+                "3": "diss_ent_pct_yoy"
+            }
+        },
+        "10":{
+            "sheet":"Investment Capital Under States",
+            "columns":{
+                "2":"inv_bil_lag1",
+                "3":"inv_bil",
+                "4":"accum_inv",
+                "5":"accum_inv_to_plan",
+                "6":"accum_inv_yoy"
+            }
+        },
+        "11":{
+            "sheet":"FDI",
+            "columns":{
+                "2": "n_projects",
+                "3": "new_registered_cap_mil_usd",
+                "4": "reg_cap_adjust_mil_usd"
+            }
+        },
+        "12":{
+            "sheet":"Retail Sales",
+            "columns":{
+                "0":"goods_service",
+                "1":"perf_bil_vnd_lag1",
+                "2":"est_perf_bil_vnd",
+                "3":"accum_bil_vnd",
+                "4":"structure_pct",
+                "5":"pct_yoy",
+                "6":"pct_accum_yoy"
+            }
+        },
+        "13":{
+            "sheet":"Export",
+            "columns":{
+                "2":"est_vol_1000_ton",
+                "3":"est_val_mil_usd",
+                "5":"est_accum_vol_1000_ton",
+                "6":"est_accum_val_mil_usd",
+                "8":"yoy_vol_1000_ton",
+                "9":"yoy_val_mil_usd",
+                "11":"yoy_accum_vol_1000_ton",
+                "12":"yoy_accum_val_mil_usd"
+            }
+        },
+        "14":{
+            "sheet":"Import",
+            "columns":{
+                "2":"est_vol_1000_ton",
+                "3":"est_val_mil_usd",
+                "5":"est_accum_vol_1000_ton",
+                "6":"est_accum_val_mil_usd",
+                "8":"yoy_vol_1000_ton",
+                "9":"yoy_val_mil_usd",
+                "11":"yoy_accum_vol_1000_ton",
+                "12":"yoy_accum_val_mil_usd"
+            }
+        },
+        "15":{
+            "sheet":"CPI",
+            "columns":{
+                "3":"cpi_base",
+                "4":"cpi_yoy",
+                "5":"cpi_begin_year",
+                "6":"cpi_mom",
+                "7":"avg_cpi_yoy"
+            }
+        },
+        "16":{
+            "sheet":"Carriage of passengers",
+            "columns":{
+                "1":"estimate",
+                "2":"est_accum",
+                "3":"pct_mom",
+                "4":"pct_yoy",
+                "5":"pct_accum_yoy"
+            }
+        },
+        "17":{
+            "sheet":"Carriage of cargos",
+            "columns":{
+                "1":"estimate",
+                "2":"est_accum",
+                "3":"pct_mom",
+                "4":"pct_yoy",
+                "5":"pct_accum_yoy"
+            }
+        },
+        "18":{
+            "sheet":"International visitors",
+            "columns":{
+                "2":"arrivals_lag1",
+                "3":"arrivals",
+                "4":"accum_arrivals",
+                "5":"arrivals_yoy",
+                "6":"accum_arrivals_yoy"
+            }
+        }
+    }
+}
