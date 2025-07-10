@@ -5,7 +5,7 @@ combined_data/monthly_data/*
 combined_data/quarterly_data/*
 raw_xlsx/*
 !combined_data/january_data/.gitkeep
-combined_data/monthly_data/.gitkeep
-combined_data/quarterly_data/.gitkeep
-raw_xlsx/.gitkeep
+!combined_data/monthly_data/.gitkeep
+!combined_data/quarterly_data/.gitkeep
+!raw_xlsx/.gitkeep
 macro_data.xlsx
