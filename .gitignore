@@ -9,3 +9,7 @@ raw_xlsx/*
 !combined_data/quarterly_data/.gitkeep
 !raw_xlsx/.gitkeep
 macro_data.xlsx
+__pycache__
+january_macro_data copy.xlsx
+january_macro_data_backup.xlsx
+january_macro_data.xlsx

@@ -111,7 +111,7 @@
                 "4": "reg_cap_adjust_mil_usd"
             }
         },
-        "13":{
+        "12":{
             "sheet":"Retail Sales",
             "columns":{
                 "0":"goods_service",
@@ -122,7 +122,7 @@
                 "5":"pct_yoy"
             }
         },
-        "14":{
+        "13":{
             "sheet":"Export",
             "columns":{
                 "2":"last_yr_vol_1000_ton",
@@ -133,7 +133,7 @@
                 "9":"yoy_val_mil_usd"
             }
         },
-        "15":{
+        "14":{
             "sheet":"Import",
             "columns":{
                 "2":"last_yr_vol_1000_ton",
@@ -144,7 +144,7 @@
                 "9":"yoy_val_mil_usd"
             }
         },
-        "16":{
+        "15":{
             "sheet":"CPI",
             "columns":{
                 "3":"cpi_base",
@@ -152,7 +152,7 @@
                 "5":"cpi_mom"
             }
         },
-        "17":{
+        "16":{
             "sheet":"Carriage of passengers",
             "columns":{
                 "2":"estimate",
@@ -160,7 +160,7 @@
                 "4":"pct_yoy"
             }
         },
-        "18":{
+        "17":{
             "sheet":"Carriage of cargos",
             "columns":{
                 "2":"estimate",
@@ -168,7 +168,7 @@
                 "4":"pct_yoy"
             }
         },
-        "19":{
+        "18":{
             "sheet":"International visitors",
             "columns":{
                 "2":"est_arrivals",

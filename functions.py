@@ -6,6 +6,7 @@ import time
 import pickle
 import pandas as pd
 import re
+from datetime import datetime
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -28,6 +29,8 @@ def download_data(download_path, url_list):
     Args:
         download_path: folder to save the files
         url_list: List of urls to download
+    Output:
+        Error urls
     '''
     
     # Set Chrome Driver Options
@@ -40,6 +43,7 @@ def download_data(download_path, url_list):
     options.binary_location = "./chrome-win64/chrome.exe"
     options.add_argument("--headless")
 
+    error_url = []
     for url in tqdm(url_list): # Change to all_reports_url to crawl all data
         try: 
             service = ChromeService(executable_path = "./chromedriver-win64/chromedriver.exe")
@@ -47,7 +51,7 @@ def download_data(download_path, url_list):
             driver.get(url)
 
             wait = WebDriverWait(driver, 10)
-            download_link = wait.until(EC.element_to_be_clickable((By.XPATH, '//a[contains(@href, ".xlsx")]')))
+            download_link = wait.until(EC.element_to_be_clickable((By.XPATH, '//a[contains(@href, ".xlsx") or contains(@href, ".xls)]')))
             download_link.click()
 
             # Wait for files to finish downloading
@@ -60,26 +64,30 @@ def download_data(download_path, url_list):
                     download_complete = True
         except Exception as error:
             print(f"Error at: {url}")
+            error_url.append(url)
         driver.quit()
+    return error_url
 
 def add_month(df, excel_path):
     '''
     Converting excel file name to datetime
     '''
-    df = df.assign(
-        month = excel_path
-    ).assign(
-        month = lambda df: (df['month'].str[3:].replace("[^0-9]", "", regex=True)).str[-6:]
-    )
-    df.loc[df["month"].str.len()<6, "month"] = "0" + df["month"]
-    df["month"] = pd.to_datetime(df["month"], format = "%m%Y") + pd.offsets.MonthEnd()
 
+    pattern = re.compile(r"(\d{1,2})[-.](20\d{2})")
+    match = pattern.search(excel_path)
+    month, year = match.groups()
+
+    df = df.assign(
+        month = pd.Timestamp(
+            datetime(year=int(year), month=int(month), day=1)
+        ) + pd.DateOffset(months=1)
+    )
     return df
 
 def use_columns(excel_path="", sheet_index=0, col_index=None):
     '''
     Params:
-        excel_path: Excel file name
+        excel_path: Excel file name, default with search in folder 'raw_xlsx'
         sheet_index: numeric index of sheet, starts with 0
         col_index: index of columns to keep (default: all columns)
     Output:
@@ -138,9 +146,15 @@ def check_columns(name_list: list[Literal["quarterly_files", "monthly_files", "j
     sheet_names = []
     for file in name_list:
         excel = os.path.join("raw_xlsx", file)
-        sheet_names.append(pd.ExcelFile(excel).sheet_names)
+        try:
+            sheet_names.append(pd.ExcelFile(excel).sheet_names)
+        except:
+            print(f"Failed to read file: {file}")
     data = pd.DataFrame(sheet_names).transpose()
-    data.columns = name_list
+    try:
+        data.columns = name_list
+    except:
+        print(f"Failed to change column names of file: {file}")
     return data
 
 def combine_columns(df: pd.DataFrame, n_columns: int):
@@ -158,8 +172,35 @@ def combine_columns(df: pd.DataFrame, n_columns: int):
         0:"name"
     })
     for i in range(0, n_columns - 1):
-        print(i)
         df = df.assign(
             name = lambda df : df.loc[:, "name"].combine_first(df[i+1])
         )
     return df
+
+def remove_duplicates(folder_path: str):
+    '''
+    Delete duplicated files from folder
+    Args:
+        folder_path: Path to the folder that you would like to remove duplicates
+    '''
+
+    all_files = os.listdir(folder_path)
+    duplicate_pattern = re.compile(r'^(.*)\s\(\d+\)(\.\w+)$')
+
+    original_files = set()
+
+    for file in all_files:
+        match = duplicate_pattern.match(file)
+        if match:
+            base_name = match.group(1) + match.group(2)
+            original_files.add(base_name)
+
+    # Now delete duplicates
+    for file in all_files:
+        if duplicate_pattern.match(file):
+            file_path = os.path.join(folder_path, file)
+            try:
+                os.remove(file_path)
+                print(f"Deleted: {file}")
+            except Exception as e:
+                print(f"Failed to delete {file}: {e}")
